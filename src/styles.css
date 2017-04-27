@@ -1,1 +1,135 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+  background: #ffffff;
+  color: #30373e;
+  overflow: hidden;
+  font-size: 14px;
+}
+a:focus {
+  outline:0;
+}
+
+.BMapLabel {
+  max-width: none;
+}
+/**** os loader **********************************************************/
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+.app-loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #fff;
+}
+
+.content-loader {
+  position: fixed;
+  top: 50px;
+  left: 220px;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9999;
+}
+
+
+
+.spinner {
+  position: fixed;
+  bottom: 0;
+  min-width: 80px;
+  margin: -8px 0 0 -40px;
+  left: 50%;
+  top: 50%;
+  line-height: 16px;
+  padding-left: 27px;
+}
+
+.spinner:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -40px;
+}
+
+.spinner:before,
+.spinner:not(:required):before {
+  content: '';
+}
+
+.spinner:not(:required):before {
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.3);
+  border-top-color: rgba(0,0,0,0);
+  animation: spinner .6s linear infinite;
+  -webkit-animation: spinner .6s linear infinite;
+}
+
+
+/************* layout*******************/
+
+.app-headbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+  z-index: 5;
+}
+
+.app-sidebar {
+  overflow-y: auto;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background: #3C454D;
+  z-index: 1;
+  transition: width .2s ease-in;
+}
+
+.app-content{
+  position: absolute;
+  top: 50px;
+  left: 220px;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: left .2s ease-in;
+  /*height:100%;*/
+}
+
+.app-footer{
+  height:16px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  text-align: center;
+}

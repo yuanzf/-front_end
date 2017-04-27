@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SharedModule } from "./share/share.module";
+import { ROUTING } from "./app.routes";
+import { ConsoleModule } from "./console/console.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +15,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule,
+    ConsoleModule,
+    ROUTING,
   ],
   providers: [],
   bootstrap: [AppComponent]

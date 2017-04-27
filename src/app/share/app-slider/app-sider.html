@@ -1,0 +1,15 @@
+<div id="sidebar" class="sidebar" >
+  <div class="sidebar-menu" >
+    <ul class="nav">
+      <li class="has-sub" [ngClass]="{'active': item.active,'expand':item.expand }" *ngFor="let item of menu" >
+        <a href="" (click)="menuExpand($event,item)" >
+          <b class="pull-right fa " [ngClass]="{'fa-chevron-down': !item.expand,'fa-chevron-up': item.expand}"> </b> <i class="fa {{item.icon}}"></i><span>{{item.name}}</span>
+        </a>
+        <ul class="sub-menu">
+          <li *ngFor="let child of item.children" [ngClass]="{active: child.active}"><a [routerLink]="child.path" (click)="menuActive($event,child)">{{child.name}}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="sidebar-foot">技术支持-策望科技</div>
